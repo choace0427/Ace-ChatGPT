@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@pinecone-database/pinecone": "^0.1.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "langchain": "^0.0.72",
+    "mongoose": "^7.2.1",
+    "nodemon": "^2.0.22",
+    "openai": "^3.2.1",
+    "pdf-parse": "^1.1.1",
+    "sequelize": "^6.31.1",
+    "stream": "^0.0.2"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "serve": "nodemon app.js"
+  }
+}
