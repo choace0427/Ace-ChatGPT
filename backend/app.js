@@ -52,7 +52,7 @@ app.post("/chat", async (req, res) => {
     const pineconeIndex = client.Index(process.env.PINECONE_INDEX);
     const vectorStore = await PineconeStore.fromExistingIndex(
       new OpenAIEmbeddings({ openAIApiKey: process.env.OPENAI_API_KEY }),
-      { pineconeIndex, namespace: "last" }
+      { pineconeIndex, namespace: "abpitest" }
     );
 
     const llm = new OpenAI({
@@ -221,7 +221,7 @@ app.post("/training", async (req, res) => {
       environment: process.env.PINECONE_ENVIRONMENT,
     });
     const pineconeIndex = client.Index(process.env.PINECONE_INDEX);
-    const result = { _id: "last" };
+    const result = { _id: "abpitest" };
     await PineconeStore.fromDocuments(
       output,
       new OpenAIEmbeddings({ openAIApiKey: process.env.OPENAI_API_KEY }),
@@ -264,6 +264,6 @@ app.listen(async () => {
   await PineconeStore.fromDocuments(
     output,
     new OpenAIEmbeddings({ openAIApiKey: process.env.OPENAI_API_KEY }),
-    { pineconeIndex, namespace: "testabpi", textKey: "text" }
+    { pineconeIndex, namespace: "abpitest", textKey: "text" }
   );
 });
